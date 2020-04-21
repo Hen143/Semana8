@@ -1,0 +1,42 @@
+import java.util.ArrayList;
+import javax.swing.JOptionPane;
+
+public class BlocoDeNotas{
+
+  private ArrayList<String> notas = new ArrayList<String>();
+
+  public void inserirNota (String nota){
+   notas.add(nota);
+  }
+
+
+  public int buscarNota (String nota){
+   for(int i=0; i < notas.size(); i++){
+      if(notas.get(i).equals(nota))
+        return i;            
+   }
+   return -1;  
+  }
+  public boolean removerNota(String nota){
+   int posicao = buscarNota(nota);
+   if (posicao >= 0){
+      notas.remove(posicao);
+      return true;
+   } 
+   return false;
+  }
+
+  public void listarNotas(){
+   for (String minhaNota:notas){
+      System.out.println(minhaNota);
+   }
+
+  } 
+
+
+}
+
+
+
+
+
